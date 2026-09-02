@@ -105,6 +105,6 @@ package struct PrintLogHandler: LogHandler {
     }
 
     private func timestamp() -> String {
-        Date().formatted(date: .numeric, time: .complete)
+        return ""
     }
 }

@@ -41,20 +41,19 @@ public struct UserAgentKeyMaterialError: LocalizedError, Sendable {
     public var errorDescription: String? {
         switch kind {
         case .invalidPublicKey:
-            "Subscriber Public Key (`\(UserAgentKeyMaterial.CodingKeys.publicKey.stringValue)`) was invalid: \(underlyingError.localizedDescription)"
+            "Subscriber Public Key (`\(UserAgentKeyMaterial.CodingKeys.publicKey.stringValue)`) was invalid"
         case .invalidAuthenticationSecret:
-            "Subscriber Authentication Secret (`\(UserAgentKeyMaterial.CodingKeys.authenticationSecret.stringValue)`) was invalid: \(underlyingError.localizedDescription)"
+            "Subscriber Authentication Secret (`\(UserAgentKeyMaterial.CodingKeys.authenticationSecret.stringValue)`) was invalid"
         }
     }
 }
 
 extension UserAgentKeyMaterialError: Hashable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.kind == rhs.kind && lhs.underlyingError.localizedDescription == rhs.underlyingError.localizedDescription
+        lhs.kind == rhs.kind
     }
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(kind)
-        hasher.combine(underlyingError.localizedDescription)
     }
 }

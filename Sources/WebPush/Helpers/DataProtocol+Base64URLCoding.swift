@@ -6,10 +6,9 @@
 //  Copyright © 2024 Mochi Development, Inc. All rights reserved.
 //
 
+import Foundation
 #if canImport(FoundationEssentials)
 import FoundationEssentials
-#else
-import Foundation
 #endif
 
 extension DataProtocol {
