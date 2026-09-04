@@ -76,7 +76,7 @@ extension VAPID.Key: Identifiable {
         private var rawValue: String
         
         /// Initialize an ID with a raw string.
-        init(_ rawValue: String) {
+        public init(_ rawValue: String) {
             self.rawValue = rawValue
         }
         
