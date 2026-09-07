@@ -108,8 +108,8 @@ extension UserAgentKeyMaterial: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
         let publicKeyString = try container.decode(String.self, forKey: .publicKey)
+        print("public key string base 64 encoded: " + publicKeyString)
         let authenticationSecretString = try container.decode(String.self, forKey: .authenticationSecret)
         try self.init(publicKey: publicKeyString, authenticationSecret: authenticationSecretString)
     }
